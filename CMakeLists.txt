@@ -15,6 +15,7 @@ add_executable(Diabetes_Manager main.cpp)
 
 # sqlite subdir
 add_subdirectory(SQLiteLib)
+add_subdirectory(Window)
 
 
 # qt6
@@ -25,3 +26,7 @@ target_link_libraries(Diabetes_Manager PRIVATE Qt6::Widgets)
 target_include_directories(Diabetes_Manager PUBLIC SQLiteLib)
 target_link_libraries(Diabetes_Manager PUBLIC sqlite3)
 
+
+# window
+target_include_directories(Diabetes_Manager PUBLIC Window)
+target_link_libraries(Diabetes_Manager PUBLIC Window)

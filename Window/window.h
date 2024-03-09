@@ -5,11 +5,12 @@
 #ifndef WINDOW_H
 #define WINDOW_H
 
+#include <QMainWindow>
 
 
-
-class window {
-
+class window : public QMainWindow{
+public:
+    explicit window(QWidget* parent = nullptr);
 };
 
 
