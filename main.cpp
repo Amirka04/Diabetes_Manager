@@ -11,10 +11,10 @@ int main(int args, char**argv) {
     QApplication app(args, argv);
 
     // load Styles in project
-    QFile file("Styles.qss");
-    file.open(QFile::ReadOnly);
-    QString style(file.readAll());
-    app.setStyleSheet(style);
+    // QFile file("Styles.qss");
+    // file.open(QFile::ReadOnly);
+    // QString style(file.readAll());
+    // app.setStyleSheet(style);
 
     // main window
     window win;

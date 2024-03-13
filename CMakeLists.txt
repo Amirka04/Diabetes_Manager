@@ -13,20 +13,17 @@ set(CMAKE_AUTOUIC ON)
 add_executable(Diabetes_Manager main.cpp)
 
 
-# sqlite subdir
-add_subdirectory(SQLiteLib)
 add_subdirectory(Window)
+add_subdirectory(SQLClass)
 
 
 # qt6
 target_link_libraries(Diabetes_Manager PRIVATE Qt6::Widgets)
 
-
-# sqlite
-target_include_directories(Diabetes_Manager PUBLIC SQLiteLib)
-target_link_libraries(Diabetes_Manager PUBLIC sqlite3)
-
-
 # window
 target_include_directories(Diabetes_Manager PUBLIC Window)
 target_link_libraries(Diabetes_Manager PUBLIC Window)
+
+# SQLClass
+target_include_directories(Diabetes_Manager PUBLIC SQLClass)
+target_link_directories(Diabetes_Manager PUBLIC sqlServer)
