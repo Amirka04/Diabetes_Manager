@@ -4,9 +4,13 @@
 
 #include "window.h"
 
+#include "../SingletonSQLServer/SQLServer.h"
+
 
 window::window(QWidget *parent) {
     setWindowTitle("Diabetes Manager");
     setWindowIcon(QIcon("diabetes.png"));
     setMinimumSize(QSize(500, 500));
 }
+
+

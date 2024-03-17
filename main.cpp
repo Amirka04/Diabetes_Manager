@@ -2,13 +2,24 @@
 #include <QApplication>
 #include <QFile>
 
+
 // my class
-#include "Window/window.h"
+#include "window.h"
+#include "SQLServer.h"
+
+
+
+// C++ classes
+#include <map>
+#include <iostream>
 
 
 
 int main(int args, char**argv) {
     QApplication app(args, argv);
+
+    // Открою базу данных для дальшейшего его использования
+    SQLServer::GetInstance("DataBase.db")->send_request("SELECT * FROM product");
 
     // load Styles in project
     // QFile file("Styles.qss");
@@ -16,9 +27,12 @@ int main(int args, char**argv) {
     // QString style(file.readAll());
     // app.setStyleSheet(style);
 
+
+
     // main window
     window win;
     win.show();
+
 
     // run
     return app.exec();

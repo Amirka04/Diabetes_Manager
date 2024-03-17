@@ -14,7 +14,7 @@ add_executable(Diabetes_Manager main.cpp)
 
 
 add_subdirectory(Window)
-add_subdirectory(SQLClass)
+add_subdirectory(SingletonSQLServer)
 
 
 # qt6
@@ -24,6 +24,7 @@ target_link_libraries(Diabetes_Manager PRIVATE Qt6::Widgets)
 target_include_directories(Diabetes_Manager PUBLIC Window)
 target_link_libraries(Diabetes_Manager PUBLIC Window)
 
-# SQLClass
-target_include_directories(Diabetes_Manager PUBLIC SQLClass)
-target_link_directories(Diabetes_Manager PUBLIC sqlServer)
+
+# include and link sqlite3 lib
+target_include_directories(Diabetes_Manager PUBLIC SingletonSQLServer)
+target_link_libraries(Diabetes_Manager PUBLIC SQLServer)
